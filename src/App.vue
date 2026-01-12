@@ -4,7 +4,7 @@
       <div class="card-header">Крайна цена</div>
       <div class="card-body">
         <div class="row">
-          <div class="col">
+          <div class="col mb-2">
             <div class="row g-3 align-items-center">
               <div class="col-auto">
                 <label for="end-price-euro" class="form-label mr-1">Евро</label>
@@ -20,7 +20,7 @@
               </div>
             </div>
           </div>
-          <div class="col mb-2">
+          <div class="col">
             <div class="row g-3 align-items-center">
               <div class="col-auto">
                 <label for="end-price-lv" class="form-label mr-1">Лева</label>
@@ -44,7 +44,7 @@
       <div class="card-header">Платена сума</div>
       <div class="card-body">
         <div class="row">
-          <div class="col">
+          <div class="col mb-2">
             <div class="row g-3 align-items-center">
               <div class="col-auto">
                 <label for="amount-paid-euro" class="form-label mr-1">Евро</label>
@@ -60,7 +60,7 @@
               </div>
             </div>
           </div>
-          <div class="col mb-2">
+          <div class="col">
             <div class="row g-3 align-items-center">
               <div class="col-auto">
                 <label for="amount-paid-lv" class="form-label mr-1">Лева</label>
@@ -84,7 +84,7 @@
       <div class="card-header">Ресто</div>
       <div class="card-body">
         <div class="row">
-          <div class="col">
+          <div class="col mb-2">
             <div class="row g-3 align-items-center">
               <div class="col-auto">
                 <label for="change-euro" class="form-label mr-1">Евро</label>
@@ -100,7 +100,7 @@
               </div>
             </div>
           </div>
-          <div class="col mb-2">
+          <div class="col">
             <div class="row g-3 align-items-center">
               <div class="col-auto">
                 <label for="change-lv" class="form-label mr-1">Лева</label>
@@ -119,6 +119,13 @@
         </div>
       </div>
     </div>
+
+    <div class="row text-center mt-2">
+      <div class="col">
+        <button type="button" class="btn btn-primary" @click="clear">Изчисти</button>
+      </div>
+    </div>
+    <!-- /.row -->
   </div>
 </template>
 
@@ -193,6 +200,12 @@ export default {
     setFocus(element) {
       this.focusedElement = element
     },
+    clear() {
+      this.endPriceLv = '';
+      this.endPriceEuro = '';
+      this.amountPaidLv = '';
+      this.amountPaidEuro = '';
+    }
   },
   watch: {
     endPriceLv(newVal) {
